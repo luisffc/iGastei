@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Valor:</b>
+  <%= @gasto.valor %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @gasto.data %>
+</p>
+
+<p>
+  <b>Descricao:</b>
+  <%= @gasto.descricao %>
+</p>
+
+
+<%= link_to 'Edit', edit_gasto_path(@gasto) %> |
+<%= link_to 'Back', gastos_path %>

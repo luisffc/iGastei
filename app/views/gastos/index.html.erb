@@ -1,0 +1,27 @@
+<h1>Listing gastos</h1>
+
+<table>
+  <tr>
+    <th>Valor</th>
+    <th>Data</th>
+    <th>Descricao</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gastos.each do |gasto| %>
+  <tr>
+    <td><%= gasto.valor %></td>
+    <td><%= gasto.data %></td>
+    <td><%= gasto.descricao %></td>
+    <td><%= link_to 'Show', gasto %></td>
+    <td><%= link_to 'Edit', edit_gasto_path(gasto) %></td>
+    <td><%= link_to 'Destroy', gasto, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Gasto', new_gasto_path %>

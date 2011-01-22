@@ -1,0 +1,23 @@
+<h1>Listing meios</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @meios.each do |meio| %>
+  <tr>
+    <td><%= meio.nome %></td>
+    <td><%= link_to 'Show', meio %></td>
+    <td><%= link_to 'Edit', edit_meio_path(meio) %></td>
+    <td><%= link_to 'Destroy', meio, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Meio', new_meio_path %>

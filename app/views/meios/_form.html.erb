@@ -1,0 +1,21 @@
+<%= form_for(@meio) do |f| %>
+  <% if @meio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@meio.errors.count, "error") %> prohibited this meio from being saved:</h2>
+
+      <ul>
+      <% @meio.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_area :nome %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
