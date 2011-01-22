@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :meio, "Meio de pagamento" %><br />
-    <%= f.text_field :meio_id %>
+    <%= select("gasto", "meio_id", Meio.all.collect {|p| [ p.nome, p.id ] }, {:prompt => 'Selecione um meio de pagamento'}) %>
   </div>
   <div class="field">
     <%= f.label :descricao %><br />
