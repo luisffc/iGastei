@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110122201739) do
+ActiveRecord::Schema.define(:version => 20110122203521) do
 
   create_table "gastos", :force => true do |t|
     t.float    "valor"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20110122201739) do
     t.text     "descricao"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "meio_id"
   end
 
   create_table "meios", :force => true do |t|

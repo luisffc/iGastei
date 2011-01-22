@@ -4,6 +4,7 @@
   <tr>
     <th>Valor</th>
     <th>Data</th>
+    <th>Meio de pagamento</th>
     <th>Descricao</th>
     <th></th>
     <th></th>
@@ -14,6 +15,7 @@
   <tr>
     <td><%= gasto.valor %></td>
     <td><%= gasto.data %></td>
+    <td><%= gasto.meio.nome %></td>
     <td><%= gasto.descricao %></td>
     <td><%= link_to 'Show', gasto %></td>
     <td><%= link_to 'Edit', edit_gasto_path(gasto) %></td>
