@@ -14,7 +14,7 @@
 <% @gastos.each do |gasto| %>
   <tr>
     <td><%= gasto.valor %></td>
-    <td><%= gasto.data %></td>
+    <td><%= gasto.data.strftime('%d/%m/%Y') %></td>
     <td><%= gasto.meio.nome %></td>
     <td><%= gasto.descricao %></td>
     <td><%= link_to 'Show', gasto %></td>
