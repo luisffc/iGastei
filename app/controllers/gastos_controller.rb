@@ -1,44 +1,43 @@
 class GastosController < ApplicationController
-  # GET /gastos
-  # GET /gastos.xml
+
   def index
     @gastos = Gasto.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @gastos }
+      format.js   { render :json => @gastos }
     end
   end
 
-  # GET /gastos/1
-  # GET /gastos/1.xml
+
   def show
     @gasto = Gasto.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @gasto }
+      format.js   { render :json => @gastos }
     end
   end
+  
 
-  # GET /gastos/new
-  # GET /gastos/new.xml
   def new
     @gasto = Gasto.new
 
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @gasto }
+      format.js   { render :json => @gastos }
     end
   end
 
-  # GET /gastos/1/edit
+
   def edit
     @gasto = Gasto.find(params[:id])
   end
+  
 
-  # POST /gastos
-  # POST /gastos.xml
   def create
     @gasto = Gasto.new(params[:gasto])
 
@@ -46,15 +45,16 @@ class GastosController < ApplicationController
       if @gasto.save
         format.html { redirect_to(@gasto, :notice => 'Gasto was successfully created.') }
         format.xml  { render :xml => @gasto, :status => :created, :location => @gasto }
+        format.js   { render :json => @gasto, :status => :created, :location => @gasto }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @gasto.errors, :status => :unprocessable_entity }
+        format.js   { render :json => @gasto.errors, :status => :unprocessable_entity }
       end
     end
   end
+  
 
-  # PUT /gastos/1
-  # PUT /gastos/1.xml
   def update
     @gasto = Gasto.find(params[:id])
 
@@ -65,12 +65,12 @@ class GastosController < ApplicationController
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @gasto.errors, :status => :unprocessable_entity }
+        format.js   { render :json => @gasto.errors, :status => :unprocessable_entity }
       end
     end
   end
+  
 
-  # DELETE /gastos/1
-  # DELETE /gastos/1.xml
   def destroy
     @gasto = Gasto.find(params[:id])
     @gasto.destroy
@@ -78,6 +78,7 @@ class GastosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(gastos_url) }
       format.xml  { head :ok }
+      format.js   { head :ok }
     end
   end
 end
